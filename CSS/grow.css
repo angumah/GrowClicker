@@ -1,5 +1,5 @@
 body {
-    background-color: grey;
+    background-color: black;
 }
 
 h1 {
@@ -13,6 +13,8 @@ h2 {
 
 p {
     color: blanchedalmond;
+    display: inline;
+    margin: 0px;
 }
 
 .button {
@@ -24,7 +26,18 @@ p {
     font-size: 25px;
     border-radius: 10px;
 }
-p {
-    display: inline;
-    margin: 0px;
+
+#eInfo{
+    display:none;
+}
+
+#eButton:hover {
+    background: #C8C6C6;
+}
+#eButton:hover + #eInfo{
+    display:block;
+}
+
+.info {
+    color: blanchedalmond;
 }
