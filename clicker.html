@@ -17,14 +17,21 @@
             <p class="output" id="particle">0</p>
             <p class="output" id="particleMax">/100</p>
         </div>
+        <div class="bigBang" id="gravBang">
+            <h2>Gravity</h2>
+            <p class="output" id="gravity">0</p>
+            <p class="output" id="gravityMax">/100</p>
+        </div>
         <div>
             <button id="eButton" class="button" onclick="energyClick()">Energy</button>
             <div id="eInfo" class="info">Creates 1 Energy</div>
             <button id="pButton" class="button" onclick="particleClick()">Particle</button>
-            <div id="pInfo" class="info">Creates 1 Particle Costs 30 Energy</div>
+            <div id="pInfo" class="info">Creates 1 Particle Costs 30 Energy
+                <br>Makes 1 Energy per second</div>
             <button id="gravButton" class="button" onclick="gravityClick()">Gravity</button>
             <div id="gravInfo" class="info">Creates 1 gravity Costs 50 Energy and 10 Particles
-                <br>Increases Energy Max by 10</div>
+                <br>Increases Energy Max by 10
+                <br>Makes 1 Particle per second</div>
         </div>
     </body>
 </html>

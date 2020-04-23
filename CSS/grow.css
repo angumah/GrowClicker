@@ -57,3 +57,21 @@ p {
 #gravButton:hover + #gravInfo{
     display:block;
 }
+
+#pButton{
+    display: none;
+}
+
+#gravButton{
+    display: none;
+}
+
+#particleBang{
+    display: none;
+}
+#gravButton{
+    display: none;
+}
+#gravBang{
+    display: none;
+}

@@ -7,6 +7,7 @@ var energyMax = 100;
 var timer = false;
 var particleMax = 100;
 var timeInt = 1000;
+var gravUnlock = false;
 
 function energyClick(){
 energy += clickvalue;
@@ -16,7 +17,6 @@ e.innerHTML = energy;
 if (energy == energyMax) {
     document.getElementById("eButton").disabled = true;
     timer = false;
-    clearInterval(pTime);
 }
 
 else {
@@ -25,12 +25,15 @@ else {
 if (energy >= 30) {
     particleUnlock = true;
 }
+if (particleUnlock == true){
+    var pButtonDisplay = document.getElementById("pButton");
+    pButtonDisplay.style.display = "block";
+    var particleBangDisplay = document.getElementById("particleBang");
+    particleBangDisplay.style.display = "block";
+}
 }
 
 function particleClick(){
-    if (energy >= 30) { 
-        particleUnlock = true;
-    }
     if (particleUnlock == true && energy >= 30){
         particles += partClickValue;
         var p = document.getElementById("particle");
@@ -38,6 +41,7 @@ function particleClick(){
         energy -= 30;
         var e = document.getElementById("energy");
         e.innerHTML = energy;
+        myTimer();
     }
     if(particleUnlock == true && energy >= 30 && energy == energyMax){
         particles += partClickValue;
@@ -45,15 +49,9 @@ function particleClick(){
         p.innerHTML = particles;
         energy -= 30;
     }
-    if (particle == particleMax){
-        document.getElementById("pButton").disabled = true;
-    }
-    else {
-        document.getElementById("pButton").disabled = false;
-    }
-    myTimer();
+
 }
-    function myTimer(){
+function myTimer(){
     if (energy < energyMax){
     energy++;
     var e = document.getElementById("energy");
@@ -61,3 +59,11 @@ function particleClick(){
     setTimeout(myTimer, 1000)
     }
     }
+
+function gravityClick(){
+    if (particles >=10 && energy >= 50){
+    energyMax += 10;
+    var eMax = document.getElementById("energyMax");
+    eMax.innerHTML = energyMax;
+    }
+}
