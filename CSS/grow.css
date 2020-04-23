@@ -25,6 +25,7 @@ p {
     text-align: center;
     font-size: 25px;
     border-radius: 10px;
+    border: none;
 }
 
 .info {
@@ -36,13 +37,23 @@ p {
 #eButton:hover {
     background: #C8C6C6;
 }
+
 #eButton:hover + #eInfo{
     display:block;
 }
+
 #pButton:hover {
     background: #C8C6C6;
 }
+
 #pButton:hover + #pInfo{
     display:block;
 }
 
+#gravButton:hover{
+    background: #C8C6C6;
+}
+
+#gravButton:hover + #gravInfo{
+    display:block;
+}
