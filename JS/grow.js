@@ -86,6 +86,12 @@ function gravityClick(){
     var g = document.getElementById("gravity");
     g.innerHTML = gravity;
     gravityClickTimer();
+    energy -= 50;
+    particles -= 10;
+    var e = document.getElementById("energy");
+    e.innerHTML = energy;
+    var p = document.getElementById("particle");
+    p.innerHTML = particles;
     }
     if (gravity == gravityMax){
         document.getElementById("gravButton").disabled = true;
