@@ -16,15 +16,6 @@ function energyClick(){
 energy += clickvalue;
 var e = document.getElementById("energy");
 e.innerHTML = energy;
-
-if (energy == energyMax) {
-    document.getElementById("eButton").disabled = true;
-    timer = false;
-}
-
-else {
-    document.getElementById("eButton").disabled = false;
-}
 if (energy >= 30) {
     particleUnlock = true;
 }
@@ -81,7 +72,7 @@ function gravityClick(){
     if (gravUnlock == true && particles >=10 && energy >= 50){
     energyMax += 10;
     var eMax = document.getElementById("energyMax");
-    eMax.innerHTML = energyMax;
+    eMax.innerHTML = ("/" + energyMax);
     gravity++;
     var g = document.getElementById("gravity");
     g.innerHTML = gravity;
