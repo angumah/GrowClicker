@@ -78,7 +78,7 @@ function particleClickTimer(){
     }
 
 function gravityClick(){
-    if (gravUnlock == true && particles >=10 && energy >= 50 && gravity < gravityMax && particles < particleMax){
+    if (gravUnlock == true && particles >=10 && energy >= 50){
     energyMax += 10;
     var eMax = document.getElementById("energyMax");
     eMax.innerHTML = energyMax;
