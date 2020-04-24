@@ -8,7 +8,8 @@ var timer = false;
 var particleMax = 100;
 var timeInt = 1000;
 var gravUnlock = false;
-
+var gravity = 0;
+var gravMax = 100;
 function energyClick(){
 energy += clickvalue;
 var e = document.getElementById("energy");
@@ -41,29 +42,52 @@ function particleClick(){
         energy -= 30;
         var e = document.getElementById("energy");
         e.innerHTML = energy;
-        myTimer();
+        particleClickTimer();
     }
-    if(particleUnlock == true && energy >= 30 && energy == energyMax){
+    else if(particleUnlock == true && energy >= 30 && energy == energyMax){
         particles += partClickValue;
         var p = document.getElementById("particle");
         p.innerHTML = particles;
         energy -= 30;
     }
-
+    if (energy >=50 && particles >=10){
+        gravUnlock = true;
+    }
+    if (gravUnlock == true){
+        var gravButtonDisplay = document.getElementById("gravButton");
+        gravButtonDisplay.style.display ="block";
+        var gravBangDisplay = document.getElementById("gravBang");
+        gravBangDisplay.style.display = "block"
+    }
+    if (particles == particleMax){
+        document.getElementById("pButton").disabled = true;
+    }
+    else {
+        document.getElementById("pButton").disabled = false;
+    }
 }
-function myTimer(){
+function particleClickTimer(){
     if (energy < energyMax){
     energy++;
     var e = document.getElementById("energy");
     e.innerHTML = energy;
-    setTimeout(myTimer, 1000)
+    setTimeout(particleClickTimer, 1000)
     }
     }
 
 function gravityClick(){
-    if (particles >=10 && energy >= 50){
+    if (gravUnlock == true && particles >=10 && energy >= 50 && gravity < gravityMax){
     energyMax += 10;
     var eMax = document.getElementById("energyMax");
     eMax.innerHTML = energyMax;
+    gravityClickTimer();
+    }
+}
+
+function gravityClickTimer(){
+    if (particles < particleMax){
+        particles++;
+        var p = document.getElementById("particle");
+        p.innerHTML = particles;
     }
 }
