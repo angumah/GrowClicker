@@ -7,28 +7,30 @@
         <h1>Grow!</h1>
     </head>
     <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
         <div class="bigBang" id="energyBang">
-            <h2>Energy</h2>
+            <p>Energy</p>
             <p class="output" id="energy">0</p>
             <p class="output" id="energyMax">/100</p>
         </div>
         <div class="bigBang" id="particleBang">
-            <h2>Particles</h2>
+            <p>Particles</p>
             <p class="output" id="particle">0</p>
             <p class="output" id="particleMax">/100</p>
         </div>
         <div class="bigBang" id="gravBang">
-            <h2>Gravity</h2>
+            <p>Gravity</p>
             <p class="output" id="gravity">0</p>
             <p class="output" id="gravityMax">/100</p>
         </div>
-        <div>
+        <div class="btn-group1">
             <button id="eButton" class="button" onclick="energyClick()">Energy</button>
-            <div id="eInfo" class="info">Creates 1 Energy</div>
             <button id="pButton" class="button" onclick="particleClick()">Particle</button>
+            <button id="gravButton" class="button" onclick="gravityClick()">Gravity</button>
+        </div>
+            <div id="eInfo" class="info">Creates 1 Energy</div>
             <div id="pInfo" class="info">Creates 1 Particle Costs 30 Energy
                 <br>Makes 1 Energy per second</div>
-            <button id="gravButton" class="button" onclick="gravityClick()">Gravity</button>
             <div id="gravInfo" class="info">Creates 1 gravity Costs 50 Energy and 10 Particles
                 <br>Increases Energy Max by 10
                 <br>Makes 1 Particle per second</div>
